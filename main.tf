@@ -1,0 +1,14 @@
+terraform {
+    required_providers {
+        aws = {
+            source = "hashicorp/aws"
+            version = "~>5.0"
+        }
+    }
+}
+
+resource "aws_ecr_repository" "backend" {
+    name                 = "portfolio-aws-backend"
+    image_tag_mutability = "MUTABLE"
+
+}
