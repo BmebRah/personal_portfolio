@@ -25,6 +25,9 @@ jobs:
            - name: Terraform Init
              run: terraform init -input=false
 
+           - name: Format terraform
+             run: terraform fmt -check
+
            - name: Apply Terraform 
              run: terraform apply -auto-approve -input=false
         
@@ -47,13 +50,15 @@ jobs:
               uses: aws-actions/amazon-ecr-login@v2
 
             - name: Build and Push 
-              run: | 
+
+              run: |
                 docker build -t "$CONTAINER_REGITRY_URL/CONTAINER_REPOSITORY_NAME:${{ GITHUB.SHA }}"
-                docker push "CONTAINER_REGISTRY_URL/CONTAINER_REPOSITORY_NAME: ${{ GITHUB.SHA }}"
+                docker push "CONTAINER_REGISTRY_URL/CONTAINER_REPOSITORY_NAME:${{ GITHUB.SHA }}"
 
                 env:
                     CONTAINER_REGISTRY_URL: ${{ steps.login-ecr.outputs.registry }}
-                    COINTAINER_REPOSITORY_NAME: portfolio-aws-backend
+                    CONTAINER_REPOSITORY_NAME: portfolio-aws-backend
+
                   
 
 
