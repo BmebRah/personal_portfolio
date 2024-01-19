@@ -49,7 +49,6 @@ jobs:
           docker build -t "$CONTAINER_REGITRY_URL/CONTAINER_REPOSITORY_NAME:${{github.sha}}" .
           docker push "CONTAINER_REGISTRY_URL/CONTAINER_REPOSITORY_NAME:${{github.sha}}"
 
-
           env:
               echo CONTAINER_REGISTRY_URL: ${{steps.login-ecr.outputs.registry}}
               echo CONTAINER_REPOSITORY_NAME: portfolio-aws-backend
