@@ -21,7 +21,7 @@ jobs:
 
       - name: Terraform Init
         run: terraform init -input=false
-
+        
       - name: Apply Terraform
         run: terraform apply -auto-approve -input=false
 
@@ -52,8 +52,3 @@ jobs:
           env:
               CONTAINER_REGISTRY_URL: ${{ steps.login-ecr.outputs.registry }}
               CONTAINER_REPOSITORY_NAME: portfolio-aws-backend
-
-           - name: Apply Terraform 
-             run: terraform apply -auto-approve -input=false
-        
-    
