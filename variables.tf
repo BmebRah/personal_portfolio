@@ -1,4 +1,4 @@
 variable "availability_zones" {
     description  = "Availability zones"
-    default      = ["eu-west2a", "eu-west2c"]
+    default      = ["eu-west-2a", "eu-west-2c"]
 }
