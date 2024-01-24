@@ -76,14 +76,14 @@ resource "aws_iam_role" "prod_backend_task" {
   name = "prod-backend-task"
 
   assume_role_policy = jsonencode({
-    version = "20012-10-17"
+    Version = "20012-10-17"
     Statement = [
       {
         action = "sts:AssumeRole"
         Pricipal = {
           service = "ecs-tasks-amazonaws.com"
         },
-        Effect = "Allow"
+        Effect = "Allow",
         Sid    = ""
       }
     ]
