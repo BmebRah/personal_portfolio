@@ -66,6 +66,19 @@ resource "aws_route_table_association" "prod_public_2" {
     subnet_id      = aws_subnet.prod_public_2.id
 }
 
+resource "aws_route_table" "prod_private" {
+  vpc_id = aws_vpc.prod.id
+}
+resource "aws_route_table_association" "private_1" {
+  route_table_id = aws_route_table.prod_private.id
+  subnet_id      = aws_subnet.prod_private_1.id
+}
+resource "aws_route_table_association" "private_2" {
+  route_table_id = aws_route_table.prod_private.id
+  subnet_id      = aws_subnet.prod_private_2.id
+}
+
+
 # Internet Gateway for the public subnet 
 resource "aws_internet_gateway" "prod" {
     vpc_id = aws_vpc.prod.id
@@ -75,7 +88,6 @@ resource "aws_route" "prod_internet_gateway" {
     gateway_id        = aws_internet_gateway.prod.id
     destination_cidr_block = "0.0.0.0/0"
 }
-
 # NAT gateway
 resource "aws_eip" "prod_nat_gateway" {
   associate_with_private_ip = "10.0.0.5"
