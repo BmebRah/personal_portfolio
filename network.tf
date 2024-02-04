@@ -102,3 +102,5 @@ resource "aws_route" "prod_nat_gateway" {
   nat_gateway_id         = aws_nat_gateway.prod.id
   destination_cidr_block = "0.0.0.0/0"
 }
+
+
