@@ -9,7 +9,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # Install pip and gunicorn web server
 RUN pip install --no-cache-dir --upgrade pip
-RUN pip install gunicorn==20.1.0
+# RUN pip install gunicorn==20.1.0
 
 # Install requirements.txt
 COPY requirements.txt /
