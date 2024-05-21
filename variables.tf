@@ -12,10 +12,10 @@ variable "ecs_prod_backend_retention_days" {
   default     = 30
 }
 
-variable "aws_access_key_id" {
-  description = "AWS Access Key ID"
-}
+# variable "aws_access_key_id" {
+#   description = "AWS Access Key ID"
+# }
 
-variable "aws_secret_access_key" {
-  description = "AWS Secret Access Key"
-}
+# variable "aws_secret_access_key" {
+#   description = "AWS Secret Access Key"
+# }
