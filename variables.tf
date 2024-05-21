@@ -11,3 +11,11 @@ variable "ecs_prod_backend_retention_days" {
   description = "Retention period for backend logs"
   default     = 30
 }
+
+# variable "aws_access_key_id" {
+#   description = "AWS Access Key ID"
+# }
+
+# variable "aws_secret_access_key" {
+#   description = "AWS Secret Access Key"
+# }
